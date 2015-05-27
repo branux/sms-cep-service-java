@@ -27,8 +27,8 @@ public class CEPService extends ByJGBaseWebService {
 	/**
 	 * Retorna a versao do WebService
 	 *
-	 * @return Versão
-	 * @throws Exception
+	 * @return Versão Versão do componente
+	 * @throws Exception Dispara se não conseguir acessar o serviço
 	 */
 	public String obterVersao() throws Exception {
 		return this.executeWebService(CEPService.SERVICE, "obterVersao", null);
@@ -37,9 +37,9 @@ public class CEPService extends ByJGBaseWebService {
 	/**
 	 * Obtém o logradouro
 	 *
-	 * @param cep
-	 * @return
-	 * @throws Exception
+	 * @param cep CEP no formato "NNNNNPPP" ou "NNNNNN-PPP"
+	 * @return Retorna o logradouro
+	 * @throws Exception Dispara se não conseguir acessar o serviço
 	 */
 	public String obterLogradouro(String cep) throws Exception {
 		HashMap<String, String> params = new HashMap<String, String>();
@@ -52,11 +52,11 @@ public class CEPService extends ByJGBaseWebService {
 
 	/**
 	 * Retorna o CEP à partir do logradouro.
-	 * @param logradouro
-	 * @param localidade
-	 * @param UF
-	 * @return
-	 * @throws Exception
+	 * @param logradouro Logradouro (sem rua, avenida ou número)
+	 * @param localidade Nome da localidade
+	 * @param UF Estado da localidade
+	 * @return Retorna o CEP
+	 * @throws Exception Dispara se não conseguir acessar o serviço
 	 */
 	public String obterCEP(String logradouro, String localidade, String UF) throws Exception {
 		HashMap<String, String> params = new HashMap<String, String>();

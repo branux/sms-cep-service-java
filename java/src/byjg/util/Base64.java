@@ -5,7 +5,9 @@
 package byjg.util;
 
 /**
- * @see http://www.rgagnon.com/javadetails/java-0084.html
+ * Biblioteca para gerar e decodificar string Base64. Veja mais: 
+ * http://www.rgagnon.com/javadetails/java-0084.html
+ *
  * @author Real's How to
  */
 public class Base64 {

@@ -28,8 +28,8 @@ public class SMSService extends ByJGBaseWebService {
 	/**
 	 * Retorna a versao do WebService
 	 *
-	 * @return Versão
-	 * @throws Exception
+	 * @return Versão Retorna a versão do serviço
+	 * @throws Exception Dispara se não conseguir acessar o serviço
 	 */
 	public String obterVersao() throws Exception {
 		return this.executeWebService(SMSService.SERVICE, "obterVersao", null);
@@ -38,11 +38,11 @@ public class SMSService extends ByJGBaseWebService {
 	/**
 	 * Enviar um SMS
 	 *
-	 * @param ddd
-	 * @param celular
-	 * @param mensagem
-	 * @return 
-	 * @throws Exception
+	 * @param ddd DDD do telefone
+	 * @param celular Número do telefone
+	 * @param mensagem Mensagem a ser enviada
+	 * @return Status do Envio
+	 * @throws Exception Dispara se não conseguir acessar o serviço
 	 */
 	public String enviarSMS(String ddd, String celular, String mensagem) throws Exception {
 		return this.enviarSMS(ddd, celular, mensagem, null);
@@ -51,12 +51,12 @@ public class SMSService extends ByJGBaseWebService {
 	/**
 	 * Enviar SMS com o SenderID (requer cadastro)
 	 *
-	 * @param ddd
-	 * @param celular
-	 * @param mensagem
-	 * @param senderid
-	 * @return 
-	 * @throws Exception
+	 * @param ddd DDD do telefone
+	 * @param celular Número do telefone
+	 * @param mensagem Mensagem a ser enviada
+	 * @param senderid SenderID
+	 * @return  Status do Envio
+	 * @throws Exception Dispara se não conseguir acessar o serviço
 	 */
 	public String enviarSMS(String ddd, String celular, String mensagem, String senderid) throws Exception {
 		HashMap<String, String> params = new HashMap<String, String>();
@@ -75,10 +75,10 @@ public class SMSService extends ByJGBaseWebService {
 	/**
 	 * Enviar uma lista de SMS para serem enviados por vez (máximo 50).
 	 *
-	 * @param lista
-	 * @param mensagem
-	 * @return 
-	 * @throws Exception
+	 * @param lista Lista de telefones no formato DDPPPPNNNN
+	 * @param mensagem Mensagem a ser enviada
+	 * @return Status do Envio
+	 * @throws Exception Dispara se não conseguir acessar o serviço
 	 */
 	public String enviarListaSMS(ArrayList lista, String mensagem) throws Exception {
 		return this.enviarListaSMS(lista, mensagem, null);
@@ -88,11 +88,11 @@ public class SMSService extends ByJGBaseWebService {
 	 * Enviar uma lista de SMS para serem enviados por vez (máximo 50) com
 	 * SenderID (requer cadastro).
 	 *
-	 * @param lista
-	 * @param mensagem
-	 * @param senderid
-	 * @return
-	 * @throws Exception
+	 * @param lista Lista de telefones no formato DDPPPPNNNN
+	 * @param mensagem Mensagem a ser enviada
+	 * @param senderid SenderID
+	 * @return Status do Envio
+	 * @throws Exception Dispara se não conseguir acessar o serviço
 	 */
 	public String enviarListaSMS(ArrayList lista, String mensagem, String senderid) throws Exception {
 		HashMap<String, String> params = new HashMap<String, String>();
@@ -115,7 +115,7 @@ public class SMSService extends ByJGBaseWebService {
 	 * Consulta Créditos
 	 *
 	 * @return Quantidade de Créditos
-	 * @throws Exception
+	 * @throws Exception Dispara se não conseguir acessar o serviço
 	 */
 	public String creditos() throws Exception {
 		HashMap<String, String> params = new HashMap<String, String>();
